@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		83A93B881C5F1A0E00B2D7D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A93B871C5F1A0E00B2D7D2 /* main.m */; };
 		83A93B8B1C5F1A0E00B2D7D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A93B8A1C5F1A0E00B2D7D2 /* AppDelegate.m */; };
-		83A93B8E1C5F1A0E00B2D7D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A93B8D1C5F1A0E00B2D7D2 /* ViewController.m */; };
 		83A93B911C5F1A0E00B2D7D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A93B8F1C5F1A0E00B2D7D2 /* Main.storyboard */; };
 		83A93B931C5F1A0E00B2D7D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83A93B921C5F1A0E00B2D7D2 /* Assets.xcassets */; };
 		83A93B961C5F1A0E00B2D7D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A93B941C5F1A0E00B2D7D2 /* LaunchScreen.storyboard */; };
@@ -19,6 +18,7 @@
 		83A93BBE1C5F56E100B2D7D2 /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A93BBC1C5F56E100B2D7D2 /* FlickrPhoto.m */; };
 		83A93BC11C5F60DA00B2D7D2 /* FlikrCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A93BC01C5F60DA00B2D7D2 /* FlikrCollectionViewController.m */; };
 		83A93BC41C5F63E100B2D7D2 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A93BC31C5F63E100B2D7D2 /* PhotoCollectionViewCell.m */; };
+		83A93BC71C5F8B9400B2D7D2 /* PhotoCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A93BC61C5F8B9400B2D7D2 /* PhotoCollectionViewFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +43,6 @@
 		83A93B871C5F1A0E00B2D7D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83A93B891C5F1A0E00B2D7D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		83A93B8A1C5F1A0E00B2D7D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		83A93B8C1C5F1A0E00B2D7D2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		83A93B8D1C5F1A0E00B2D7D2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		83A93B901C5F1A0E00B2D7D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83A93B921C5F1A0E00B2D7D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83A93B951C5F1A0E00B2D7D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +61,8 @@
 		83A93BC01C5F60DA00B2D7D2 /* FlikrCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlikrCollectionViewController.m; sourceTree = "<group>"; };
 		83A93BC21C5F63E100B2D7D2 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		83A93BC31C5F63E100B2D7D2 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		83A93BC51C5F8B9400B2D7D2 /* PhotoCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		83A93BC61C5F8B9400B2D7D2 /* PhotoCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,10 +119,10 @@
 				83A93BBC1C5F56E100B2D7D2 /* FlickrPhoto.m */,
 				83A93B891C5F1A0E00B2D7D2 /* AppDelegate.h */,
 				83A93B8A1C5F1A0E00B2D7D2 /* AppDelegate.m */,
-				83A93B8C1C5F1A0E00B2D7D2 /* ViewController.h */,
-				83A93B8D1C5F1A0E00B2D7D2 /* ViewController.m */,
 				83A93BBF1C5F60DA00B2D7D2 /* FlikrCollectionViewController.h */,
 				83A93BC01C5F60DA00B2D7D2 /* FlikrCollectionViewController.m */,
+				83A93BC51C5F8B9400B2D7D2 /* PhotoCollectionViewFlowLayout.h */,
+				83A93BC61C5F8B9400B2D7D2 /* PhotoCollectionViewFlowLayout.m */,
 				83A93BC21C5F63E100B2D7D2 /* PhotoCollectionViewCell.h */,
 				83A93BC31C5F63E100B2D7D2 /* PhotoCollectionViewCell.m */,
 				83A93B8F1C5F1A0E00B2D7D2 /* Main.storyboard */,
@@ -291,7 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83A93BC41C5F63E100B2D7D2 /* PhotoCollectionViewCell.m in Sources */,
-				83A93B8E1C5F1A0E00B2D7D2 /* ViewController.m in Sources */,
+				83A93BC71C5F8B9400B2D7D2 /* PhotoCollectionViewFlowLayout.m in Sources */,
 				83A93B8B1C5F1A0E00B2D7D2 /* AppDelegate.m in Sources */,
 				83A93BBD1C5F56E100B2D7D2 /* Flickr.m in Sources */,
 				83A93BBE1C5F56E100B2D7D2 /* FlickrPhoto.m in Sources */,
@@ -522,6 +522,7 @@
 				83A93BB21C5F1A0E00B2D7D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83A93BB31C5F1A0E00B2D7D2 /* Build configuration list for PBXNativeTarget "FlikrSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +531,7 @@
 				83A93BB51C5F1A0E00B2D7D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83A93BB61C5F1A0E00B2D7D2 /* Build configuration list for PBXNativeTarget "FlikrSampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +540,7 @@
 				83A93BB81C5F1A0E00B2D7D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
