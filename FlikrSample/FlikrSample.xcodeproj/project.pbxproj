@@ -15,6 +15,10 @@
 		83A93B961C5F1A0E00B2D7D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A93B941C5F1A0E00B2D7D2 /* LaunchScreen.storyboard */; };
 		83A93BA11C5F1A0E00B2D7D2 /* FlikrSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A93BA01C5F1A0E00B2D7D2 /* FlikrSampleTests.m */; };
 		83A93BAC1C5F1A0E00B2D7D2 /* FlikrSampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A93BAB1C5F1A0E00B2D7D2 /* FlikrSampleUITests.m */; };
+		83A93BBD1C5F56E100B2D7D2 /* Flickr.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A93BBA1C5F56E100B2D7D2 /* Flickr.m */; };
+		83A93BBE1C5F56E100B2D7D2 /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A93BBC1C5F56E100B2D7D2 /* FlickrPhoto.m */; };
+		83A93BC11C5F60DA00B2D7D2 /* FlikrCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A93BC01C5F60DA00B2D7D2 /* FlikrCollectionViewController.m */; };
+		83A93BC41C5F63E100B2D7D2 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A93BC31C5F63E100B2D7D2 /* PhotoCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,14 @@
 		83A93BA71C5F1A0E00B2D7D2 /* FlikrSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlikrSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A93BAB1C5F1A0E00B2D7D2 /* FlikrSampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlikrSampleUITests.m; sourceTree = "<group>"; };
 		83A93BAD1C5F1A0E00B2D7D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83A93BB91C5F56E100B2D7D2 /* Flickr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flickr.h; sourceTree = "<group>"; };
+		83A93BBA1C5F56E100B2D7D2 /* Flickr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flickr.m; sourceTree = "<group>"; };
+		83A93BBB1C5F56E100B2D7D2 /* FlickrPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhoto.h; sourceTree = "<group>"; };
+		83A93BBC1C5F56E100B2D7D2 /* FlickrPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhoto.m; sourceTree = "<group>"; };
+		83A93BBF1C5F60DA00B2D7D2 /* FlikrCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlikrCollectionViewController.h; sourceTree = "<group>"; };
+		83A93BC01C5F60DA00B2D7D2 /* FlikrCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlikrCollectionViewController.m; sourceTree = "<group>"; };
+		83A93BC21C5F63E100B2D7D2 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		83A93BC31C5F63E100B2D7D2 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +113,18 @@
 		83A93B851C5F1A0E00B2D7D2 /* FlikrSample */ = {
 			isa = PBXGroup;
 			children = (
+				83A93BB91C5F56E100B2D7D2 /* Flickr.h */,
+				83A93BBA1C5F56E100B2D7D2 /* Flickr.m */,
+				83A93BBB1C5F56E100B2D7D2 /* FlickrPhoto.h */,
+				83A93BBC1C5F56E100B2D7D2 /* FlickrPhoto.m */,
 				83A93B891C5F1A0E00B2D7D2 /* AppDelegate.h */,
 				83A93B8A1C5F1A0E00B2D7D2 /* AppDelegate.m */,
 				83A93B8C1C5F1A0E00B2D7D2 /* ViewController.h */,
 				83A93B8D1C5F1A0E00B2D7D2 /* ViewController.m */,
+				83A93BBF1C5F60DA00B2D7D2 /* FlikrCollectionViewController.h */,
+				83A93BC01C5F60DA00B2D7D2 /* FlikrCollectionViewController.m */,
+				83A93BC21C5F63E100B2D7D2 /* PhotoCollectionViewCell.h */,
+				83A93BC31C5F63E100B2D7D2 /* PhotoCollectionViewCell.m */,
 				83A93B8F1C5F1A0E00B2D7D2 /* Main.storyboard */,
 				83A93B921C5F1A0E00B2D7D2 /* Assets.xcassets */,
 				83A93B941C5F1A0E00B2D7D2 /* LaunchScreen.storyboard */,
@@ -270,9 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83A93BC41C5F63E100B2D7D2 /* PhotoCollectionViewCell.m in Sources */,
 				83A93B8E1C5F1A0E00B2D7D2 /* ViewController.m in Sources */,
 				83A93B8B1C5F1A0E00B2D7D2 /* AppDelegate.m in Sources */,
+				83A93BBD1C5F56E100B2D7D2 /* Flickr.m in Sources */,
+				83A93BBE1C5F56E100B2D7D2 /* FlickrPhoto.m in Sources */,
 				83A93B881C5F1A0E00B2D7D2 /* main.m in Sources */,
+				83A93BC11C5F60DA00B2D7D2 /* FlikrCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +439,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinumotta.FlikrSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -426,6 +451,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinumotta.FlikrSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
