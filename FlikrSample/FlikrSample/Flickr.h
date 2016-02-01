@@ -13,12 +13,15 @@
 
 typedef void (^FlickrSearchCompletionBlock)(NSString *searchTerm, NSArray *results, NSError *error);
 typedef void (^FlickrPhotoCompletionBlock)(UIImage *photoImage, NSError *error);
+typedef void (^FlickrFeedCompletionBlock)(NSArray *results, NSError *error);
 
 @interface Flickr : NSObject
 
 @property(strong) NSString *apiKey;
 
-- (void)searchFlickrForTerm:(NSString *) term completionBlock:(FlickrSearchCompletionBlock) completionBlock;
+- (void)searchFlickrForTerm:(NSString *)term completionBlock:(FlickrSearchCompletionBlock)completionBlock;
+- (void)loadPublicFeedWithCompletionBlock:(FlickrFeedCompletionBlock)completionBlock;
+
 + (void)loadImageForPhoto:(FlickrPhoto *)flickrPhoto thumbnail:(BOOL)thumbnail completionBlock:(FlickrPhotoCompletionBlock) completionBlock;
 + (NSString *)flickrPhotoURLForFlickrPhoto:(FlickrPhoto *) flickrPhoto size:(NSString *) size;
 

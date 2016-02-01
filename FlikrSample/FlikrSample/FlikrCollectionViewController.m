@@ -12,7 +12,7 @@
 #import "PhotoCollectionViewCell.h"
 
 @interface FlikrCollectionViewController () <UITextFieldDelegate>
-@property(nonatomic, strong) NSMutableDictionary *searchResults;
+@property(nonatomic, strong) NSMutableDictionary *photoResults;
 @property(nonatomic, strong) NSMutableArray *searches;
 @property(nonatomic, strong) Flickr *flickr;
 @end
@@ -29,11 +29,23 @@ static NSString * const reuseIdentifier = @"FlickrCell";
     
     // Register cell classes
     self.searches = [@[] mutableCopy];
-    self.searchResults = [@{} mutableCopy];
+    self.photoResults = [@{} mutableCopy];
     self.flickr = [[Flickr alloc] init];
-    //[self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
-    // Do any additional setup after loading the view.
+    [self.flickr loadPublicFeedWithCompletionBlock:^(NSArray *results, NSError *error) {
+        if(results && [results count] > 0) {
+            
+            NSLog(@"Found %ld photos in the public feed", [results count]);
+            [self.searches insertObject:@"" atIndex:0];
+            self.photoResults[@""] = results;
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.collectionView reloadData];
+            });
+        } else {
+            NSLog(@"Error searching Flickr: %@", error.localizedDescription);
+        }
+    }];
 }
 
 #pragma mark - UITextFieldDelegate methods
@@ -43,9 +55,9 @@ static NSString * const reuseIdentifier = @"FlickrCell";
         if(results && [results count] > 0) {
             
             if(![self.searches containsObject:searchTerm]) {
-                NSLog(@"Found %d photos matching %@", [results count],searchTerm);
+                NSLog(@"Found %ld photos matching %@", [results count],searchTerm);
                 [self.searches insertObject:searchTerm atIndex:0];
-                self.searchResults[searchTerm] = results; }
+                self.photoResults[searchTerm] = results; }
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.collectionView reloadData];
@@ -61,7 +73,7 @@ static NSString * const reuseIdentifier = @"FlickrCell";
 #pragma mark - UICollectionView Datasource
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
     NSString *searchTerm = self.searches[section];
-    return [self.searchResults[searchTerm] count];
+    return [self.photoResults[searchTerm] count];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
@@ -69,12 +81,9 @@ static NSString * const reuseIdentifier = @"FlickrCell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-//    cell.backgroundColor = [UIColor whiteColor];
-//    return cell;
     PhotoCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     NSString *searchTerm = self.searches[indexPath.section];
-    cell.photo = self.searchResults[searchTerm]
+    cell.photo = self.photoResults[searchTerm]
     [indexPath.row];
     return cell;
     
@@ -99,7 +108,7 @@ static NSString * const reuseIdentifier = @"FlickrCell";
 // 1
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     NSString *searchTerm = self.searches[indexPath.section]; FlickrPhoto *photo =
-    self.searchResults[searchTerm][indexPath.row];
+    self.photoResults[searchTerm][indexPath.row];
     // 2
     CGSize retval = photo.thumbnail.size.width > 0 ? photo.thumbnail.size : CGSizeMake(100, 100);
     retval.height += 35; retval.width += 35; return retval;
